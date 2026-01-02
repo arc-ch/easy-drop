@@ -13,15 +13,7 @@
 
 ---
 
-## Demo Screenshots 📸
-
-> *Screenshots / GIFs will be added here*
-
-<!-- Example (add later):
-![Grab Gesture](./screenshots/grab.png)
-![Drop Gesture](./screenshots/drop.png)
-![Image Transfer](./screenshots/transfer.gif)
--->
+<img width="1919" height="1001" alt="image" src="https://github.com/user-attachments/assets/a521b64a-8c0f-4cac-9643-70c2c20bff43" />
 
 ---
 
