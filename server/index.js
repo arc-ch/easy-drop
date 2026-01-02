@@ -20,6 +20,7 @@ app.use(cors({
   origin: function (origin, callback) {
     const allowed = [
       "http://localhost:5173",
+      "https://easy-drop-2026.netlify.app",
       "https://pick-and-drop-2723.netlify.app"
     ];
 
