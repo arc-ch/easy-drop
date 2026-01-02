@@ -15,7 +15,7 @@ const GRAB_COOLDOWN = 10000;
 const USER_ID = "id1";
 
 // backend that stores the image
-const API_URL = "https://grab-and-drop.onrender.com";
+const API_URL = "https://easy-drop-x3sb.onrender.com";
 
 // ignore low-confidence grabs
 // prevents random hand noise uploads
