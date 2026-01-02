@@ -15,7 +15,7 @@ const DROP_COOLDOWN = 10000;
 const RECEIVER_ID = "id2";
 
 // backend server
-const API_URL = "https://grab-and-drop.onrender.com";
+const API_URL = "https://easy-drop-x3sb.onrender.com";
 
 // minimum confidence needed for drop gesture
 // avoids accidental drops
