@@ -15,6 +15,33 @@
 
 <img width="1919" height="1001" alt="image" src="https://github.com/user-attachments/assets/a521b64a-8c0f-4cac-9643-70c2c20bff43" />
 
+
+### Full Flow: Client to Server
+
+```mermaid
+sequenceDiagram
+    participant User
+    participant HomePage
+    participant GestureDetector
+    participant Server
+    participant Multer
+    participant ImageCache
+    participant UploadsFolder
+
+    User->>HomePage: Selects an image file
+    HomePage->>HomePage: Shows image preview
+    User->>GestureDetector: Makes "grab" gesture
+    GestureDetector-->>HomePage: Notifies "grab" detected
+    HomePage->>Server: Sends image file + Sender ID (POST /upload)
+    Server->>Multer: Asks to handle incoming image
+    Multer->>UploadsFolder: Saves the image file
+    UploadsFolder-->>Multer: Confirms image saved, provides path
+    Multer-->>Server: Gives image path
+    Server->>ImageCache: Stores (Sender ID, imagePath)
+    ImageCache-->>Server: Confirms storage
+    Server-->>HomePage: Sends "Upload Success!" message
+    HomePage-->>User: Shows success feedback (e.g., animation)
+```
 ---
 
 ## Getting Started (Local Setup)
