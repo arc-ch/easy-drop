@@ -16,7 +16,7 @@
 <img width="1919" height="1001" alt="image" src="https://github.com/user-attachments/assets/a521b64a-8c0f-4cac-9643-70c2c20bff43" />
 
 
-### Full Flow: Client to Server
+### Full Flow: Grab
 
 ```mermaid
 sequenceDiagram
@@ -41,6 +41,26 @@ sequenceDiagram
     ImageCache-->>Server: Confirms storage
     Server-->>HomePage: Sends "Upload Success!" message
     HomePage-->>User: Shows success feedback (e.g., animation)
+```
+
+
+### Full Flow: Drop
+```mermaid
+sequenceDiagram
+    participant User
+    participant DropPage
+    participant GestureDetector
+    participant Server
+
+    User->>DropPage: Makes "drop" gesture
+    DropPage->>GestureDetector: Listens for gesture
+    GestureDetector-->>DropPage: Notifies "drop" detected (with confidence)
+    DropPage->>Server: Requests image (with Receiver ID, e.g., `/drop/id2`)
+    Server->>Server: Looks up Sender ID in `friendsMap` (e.g., id2 -> id1)
+    Server->>Server: Checks `imageCache` for image from Sender ID (e.g., from id1)
+    Server->>Server: If found, removes image from `imageCache` (single transfer!)
+    Server-->>DropPage: Sends image URL (e.g., `/uploads/image-abc.jpg`)
+    DropPage->>User: Displays the received image
 ```
 ---
 
